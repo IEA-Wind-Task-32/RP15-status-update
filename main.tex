@@ -3,17 +3,22 @@
 \usepackage{./Task32FlyerLatexStyle/Task32Flyer}
 \usepackage{todonotes}
 
-% call all of the roadmap-specific styling
-\input{roadmapsty.tex}
-
 %% -----------------------------------
 %% Document information
 %% -----------------------------------
-\def\pubdate{01 December 2019}
-\title{IEA Wind Task 32: Collaborative R\&D Roadmap}
-\shorttitle{Collaborative R\&D Roadmap}
-\DOI{10.5281/zenodo.3604290}
+\def\pubdate{DRAFT 02 April 2020}
+\title{Status Update: IEA Wind Recommended Practice 15 on Ground-Based Vertically-Profiling Remote Sensing For Wind Resource Assessment (2013)}
+\shorttitle{Status update: RP15}
+\DOI{10.5281/zenodo.xxxxxx}
 \addbibresource{bibliography.bib}
+
+%% ===================================
+%% Document - specific commands
+%% ===================================
+\usepackage[export]{adjustbox}
+\newcommand{\RP}[1]{RP #1}
+\newcommand{\note}[1]{RP #1}
+\newcommand{\RPdetails}[2]{\textbf{\RP{#1}:\ #2.}}
 
 %% ===================================
 %% Document starts
@@ -30,313 +35,264 @@
 	%% Introductory text
 	%% -----------------------------------
 	{\Large\noindent%
-		Task 32 has created a worldwide network of wind lidar researchers who meet regularly to identify opportunities for the use of wind lidar, and mitigate the barriers to its adoption.
+		IEA Wind published recommended practices on ground-based remote sensing in 2013. Is it valid in 2020?
 	}
 	\vskip 6pt
 	
-	Wind lidar has many applications for wind energy that span all technology readiness levels. Task 32 connects many stakeholders including the research community, vendors, service providers, and end users with the aim of creating an active network for the exchange of information and experience.
+	Recommended Practices don't have an expiry date, but they can become outdated. In this status update we provide our perspective on how developments in wind lidar technology since 2013 impact the IEA Wind Recommended Practice 15 on Ground-Based Vertically-Profiling Remote Sensing For Wind Resource Assessment.
 	
 	%% -----------------------------------
 	%% About
 	%% ----------------------------------- 
-    \section*{About this document}
-	This document provides an overview of our members' goals and the activities that we have already undertaken, and our plans for the future. They are intended to help stakeholders engage with the Task, provide feedback, and suggest new activities.
+	\section*{The 2013 Recommended Practices}
 	
-	An overview of the technical background to these activities is provided in an article written by the Task 32 Advisory Board in 2018 \cite{Clifton_2018_a} and in other references cited in the text.
+	The 2013 Recommended Practices document was developed by the wind lidar and sodar community in response to a clear need for a document that would establish repeatable good practice in measurements with active remote sensing devices (RSDs).
 	
-	It is expected that this document will be updated annually. 
+	As was noted in the preface to the document,
+	
+	\begin{quotation}
+	
+The purpose of this recommended practice is to document the steps required to collect high-quality, well-documented remote sensing data for use in wind resource assessments on land. 
+
+	\end{quotation}
+		
+	The document provided specific guidance as ``Recommended Practices'' (e.g., RP1) and informative notes (e.g. Note 1) about how to use remote sensing. There were 41 RPs and 22 notes in total, covering many different aspects of the remote sensing lifecycle.
+	
+	These RPs represented the community's perceptions of how to do things, and were not always based on evidence. Thus the 2013 document was a ``recommended practice'', not a standard. Since 2013 there have been several standards and other documents adopted that may supersede some RPs from 2013.
+	
+	The 2013 Recommended Practices document can be downloaded from the \href{https://community.ieawind.org/task32/ourlibrary/publications}{IEA Wind Task 32 website} or the \href{https://github.com/IEA-Wind-Task-32/RP15-Ground-Based-Remote-Sensing-for-Wind-Resource-Assessment/releases/tag/1.0}{IEA Wind Task 32 GitHub repository}.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.9\linewidth, frame]{graphics/RP2013.png} 
+		\caption{The 2013 Recommended Practices}
+		\label{fig:RP2013}
+	\end{figure}	
+	
+	
+	\section*{Scope of this document}
+	
+The 2013 document was ``designed to guide the use of ground-based, fixed scan geometry, vertically-profiling wind remote sensing using lidar and sodar for the resource assessment phase of an on-shore wind farm development. Lidar and sodar that use these methods are referred to generically in the document as remote sensing devices, or RSD.''
+	
+	This update provides guidance on the relevance of the RPs from 2013 to \textbf{ground-based wind lidar devices being used for the same applications in 2020}.
+
+	%% -----------------------------------
+	%% Feedback
+	%% ----------------------------------- 	
 	
 	\section*{Feedback}
-	Feedback about the activities described here should be directed to the Task 32 Operating agents. Contact details can be found on the \href{https://community.ieawind.org/task32/about/contact}{Task 32 website}.
+	Feedback about the 2013 Recommended Practices document should be made via the \href{https://github.com/IEA-Wind-Task-32/RP15-Ground-Based-Remote-Sensing-for-Wind-Resource-Assessment/issues}{GitHub repository}.
 	
-	\newpage
-	\section*{List of Roadmaps}
-	Task 32 has prepared roadmaps for several interrelated areas of wind lidar research and development:
+	Feedback about this status update should be directed to the \href{https://github.com/IEA-Wind-Task-32/RP15-Ground-Based-Remote-Sensing-for-Wind-Resource-Assessment}{Task 32 Operating agents}.
 	
-	\tcblistof[]{roadmap}{}
 	
-	The roadmaps include activities led by Task 32 (shown in bold text) and by other groups (lighter text).
+	\section*{Relevance of the 2013 Recommended Practices in 2020} 
 	
-	% -----------------------------------
-	% Operating Conditions
-	% -----------------------------------
-	\newpage
-	\section*{What are the conditions where we want to build wind turbines?}
-	
-	Wind lidar can be used to measure wind resources and design conditions on land and offshore. %as part of a wind resource measurement campaign. 
-	% While there is clear evidence of good agreement with traditional wind measurements from cup anemometers on meteorological masts, the fundamentally different measurement principle of a cup compared to a lidar results in some differences in complex terrain. Also, there are opportunities to use wind lidar in cold climates, for example to quantify the risk of wind turbine- or instrument icing, but these need to be explored in detail. These and other issues mean that there is a continued need for Task 32 members to actively cooperate in this area. Our common goal is the confident use of wind lidar to characterise operating conditions in all terrains and environments where wind turbines might be installed or operated.
-	
-	% -----------------------------------
-	% Complex Terrain
-	% -----------------------------------
-	\subsection*{How do we interpret lidar data in complex terrain and complex flows?}
+	Following is a review of the 2013 Recommended Practices referencing the section numbers (e.g., \S 2.3) and individual recommended practices (e.g. \RP{1}) in that document.
+	%% -----------------------------------
+	%% Characterizing RSD (RP1)
+	%% ----------------------------------- 
 
-	In complex terrain, data from wind lidars can differ from cup anemometers as they use different measurement principles. But, wind lidar may be more flexible in complex terrain than tower-mounted anemometers. Task 32 collects, collates, and disseminates experience in the use of wind lidar in complex terrain and flow situations and thus enables its successful use in future.
-	
-	% roadmap block
-	\begin{roadmap}[float = h, label=complex]{Wind lidar in complex terrain}
-	    \RMgoal{Understand how lidar data are related to point measurements, and how to use lidar to improve understanding of winds in complex terrain.}
-	    \RMactivities
-		\begin{RMold} 
-			\taskevent{2013}{Jan.}{Recommended Practice 15}{Ground-based vertically-profiling remote sensing for wind resource assessment}{Advice for remote sensing in flat terrain \cite{clifton_2013_RP15}}\\
-			\taskevent{2017}{Nov.}{Workshop 7}{Wind Lidar in Complex Terrain}{Experience, challenges, and needs for wind lidar in complex terrain}\\
-	    \end{RMold}
-	    \tcblower
-		\begin{RMnew}
-			\taskevent{2019}{Oct.}{Comparative Exercise}{Wind lidar in complex terrain}{Focus on mean wind characteristics. Runs through end 2020.~\extlink{https://community.ieawind.org/task32/events/event-information/comparative-exercise-complex-terrain-correction}}\\
-			\otherevent{2019}{}{CFARS: Ongoing investigations into the use of models with wind lidar}\\
-		\end{RMnew}
-		\RMdeliverables{2021: Report on methods for correcting wind data in complex terrain}
-		\RMoutcome{Evidence-based assessment of methods to compare wind lidar data with cup anemometers}
-	\end{roadmap}
-	
-	% -----------------------------------
-	% Cold Climates
-	% -----------------------------------
-	\newpage
-	\subsection*{What are the opportunities and challenges when using lidar in cold climates?}
-    
-    Wind lidar have been used successfully in cold climates for many years. They have potential advantages over traditional met towers because they can be less prone to icing than traditional anemometers, and they are also easier to install in remote or hard-to-reach locations. There are also challenges with their use in cold climates such as keeping them ice- and snow-free, and of providing power supplies. Most of the challenges can be mitigated, meaning that there are clear opportunities for the wind energy community to exploit their advantages.
-    
-    Roadmap \ref{rm:coldclimates} describes Task 32's steps to support the effective use of wind lidar for wind energy in cold climates.
+	\subsection*{\S 2 Characterizing remote sensing devices}
+	A remote sensing device should be appropriately characterized. The important characteristics of a wind lidar are the same in 2020 as in 2013.
 
-	\begin{roadmap}[label=rm:coldclimates]{Wind lidar for wind energy in cold climates}
-    \RMgoal{Exploring the uses of wind lidar to support wind energy deployment in cold climates (together with IEA Wind Task 19).}
-    \RMactivities
-		\begin{tabular}{@{}p{0.075\columnwidth} p{0.075\columnwidth}  p{0.7\columnwidth}@{} } 
-			\taskevent{2013}{}{Recommended Practice 15}{Ground-based vertically-profiling remote sensing for wind resource assessment}{Advice for deploying and operating wind lidar in cold climates \cite{clifton_2013_RP15}}\\
-			\taskevent{2018}{Oct.}{General Meeting}{2019}{Identified potential opportunities and challenges for wind lidar in cold climates, including the need for a working group}\\
-		\end{tabular}
-		\tcblower
-		\begin{tabular}{@{}p{0.075\columnwidth} p{0.075\columnwidth}  p{0.7\columnwidth}@{} }
-			\taskevent{2020}{Jan.}{Working Group}{wind lidar in cold climates}{Form a group of stakeholders from Task 32 and Task 19 to drive activities.~\extlink{https://community.ieawind.org/task32/events/event-information/wind-lidar-in-cold-climates}}\\
-		\end{tabular}
-	\RMdeliverables{TBD}
-	\RMoutcome{Support the effective use of wind lidar for wind energy in cold climates}
-	\end{roadmap}
+	\RPdetails{1}{Documentation of RSD characteristics} Still relevant.
+	 
+	%% -----------------------------------
+	%% Installing RSD (RP2-16)
+	%% ----------------------------------- 
 
-	% -----------------------------------
-	% Offshore
-	% -----------------------------------
-	\newpage
-	\subsection*{How can we use wind lidar offshore, and how can we assess the performance of floating Lidar systems?}
+	 \subsection*{\S 3 Installing remote sensing devices}
+	 \subsubsection*{\S 3.1 Training}
+	 The 2013 document described the need to provide and document training. This is still important to get the best data from a wind lidar or any other measurement sensor.
+	 
+	 \RPdetails{2}{Training of workers} Still relevant.
 
-	Floating wind lidar systems are cheaper and can be more flexibly used than lidar deployed to fixed platforms. For these and other reasons they have rapidly become the preferred tool for offshore wind resource assessment campaigns, and are also increasingly considered for alternative applications, e.g., power performance measurements.
+	 \subsubsection*{\S 3.2 Site selection}
+	 \RP{3} in the 2013 document addressed the issue of flow homogeneity, and suggested deploying RSD away from regions of heterogeneous flow.
+	 
+	 There are now many commercially-available tools and services that address the effect of flow homogeneity on RSDs and aim to make RSD data comparable to a point measurement (e.g. from a cup anemometer). This may make it possible to use RSDs in more heteorogeneous flows than was considered appropriate in 2013. However, the need to be aware of flow hetereogeneity and respond appropriately has not changed.
+	 
+	 \RPdetails{3}{Deployment in complex flow environments} Still relevant.
+	 
+	 An IEA Wind Task 32 working group on wind lidar complex terrain is carrying out a group study on several different tools to support the use of wind lidar in complex terrain. Results are expected in 2021 and may lead to the publication of guidelines for this use case.
 	
-	Task 32 supported the development of an offshore wind community and the creation of relevant recommended practices, leveraging support from the Carbon Trust. Roadmap \ref{rm:FLS} describes our past and future activities in this area.
-	
-	\begin{roadmap}[label=rm:FLS]{Floating lidar systems}
-	\RMgoal{Support the commercialisation of floating wind lidar systems and the transfer of research experience into everyday practice}
-	\RMactivities
-    \begin{RMold}
-        \taskevent{2016}{Feb}{Workshop 1}{Floating Lidar}{}\\
-    	\taskevent{2018}{}{Recommended Practice 18}{Floating Lidar Systems \cite{bischoff_2017_a}}{}\\
-		\taskevent{2018}{Nov.}{Workshop 13}{Floating Lidar Follow-up}{Reviewed immediate and near-future needs for collaborative R\&D}\\
-		\taskevent{2019}{June}{IEC TC 88}{}{Floating wind lidar proposed for standardisation}\\
-	\end{RMold}
-	\tcblower
-	\begin{RMnew}
-		\otherevent{2020}{Q1}{Early-stage researchers start 3-year PhD programmes in EU-funded Innovative Training Networks Lidar Knowledge Europe (ITN LIKE) and FLOAtingWind Energy netwoRk (ITN FLOAWER)}\\
-	\end{RMnew}
-	\RMdeliverables{2021: Possible update of RP18 on floating lidar systems}
-	\RMoutcome{Provide maximum input to the IEC TS 61400-50-4 initiative}
-	\end{roadmap}
+	\subsubsection*{\S 3.3 Transport}
+	Any piece of wind measurement equipment should be transported appropriately.
 
-    
-    % -----------------------------------
-	% Turbulence intensity for site assessment and loads certification
-	% -----------------------------------
-	\newpage
-	\subsection*{How can we use lidar turbulence intensity data for site assessment and loads certification?}
+	\RPdetails{4}{Reusable protective packaging for RSD transport} Still relevant.
 	
-    Wind lidar can provide data about the turbulence characteristics of wind \cite{Sathe_2015_a, Pena_2019_a}.
-    
-    There is an ongoing discussion about the relationship between lidar-derived turbulence information and data obtained from a cup anemometer, and how a wind turbine or wind plant responds to turbulence. These are being explored by several groups and it is hoped that in 2020 a joint Working Group will be established between Task 32 and others to align our activities and communication with stakeholders (Roadmap \ref{rm:TI}). 
-    
-    In addition, Task 32 plans to evaluate how lidar can contribute to load verification beyond providing providing turbulence information similar to conventional measurements.
+	\RPdetails{5}{Installation of shock detectors on the RSD} Still relevant.
+	
+	\subsubsection*{\S 3.4 Site preparation}
+	\RP{6} in the 2013 document was intended to ensure that the RSD had ``...a clear view of the sky that was largely free of obstructions.'' This is still recommended.
+	
+	\RPdetails{6 a,b}{Site reconnaissance, clearing and structures} Still relevant.
+	
+	Since 2013, wind lidar devices and the associated data processing tools have become better able to deal with obstructions or small-scale inhomogeneity, and thus it is no longer recommended to avoid tower or structure wakes, or deployments where part of the lidar scan pattern is obstructed.
+	
+	\RPdetails{6 c,d}{Measurements in tower or structure wakes, avoiding beams interacting with structures} Deprecated.
+	
+	\subsubsection*{\S 3.5 Orientation}
+	\RP{7} aimed at reducing or eliminating installation accuracy concerns.
+	
+	\RPdetails{7}{Device alignment} Still relevant.
+	
+	\subsubsection*{\S 3.6 Tilt and roll}
+	\RP{8} and \RP{9} aimed at reducing or eliminating the effect of device alignment on the measurements, and detecting gradual settling
+	
+	\RPdetails{8a}{Device coarse leveling} Still relevant.
 
-	\begin{roadmap}[label=rm:TI]{Turbulence intensity}
-	    \RMgoal{Ability to use wind lidar as part of a site assessment or wind turbine loads certification process}
-	    \RMactivities
-		\begin{RMold}
-		    \taskevent{2015}{}{IEA Wind Expert Report}{Estimating turbulence statistics and parameters from ground- and nacelle-based Lidar measurements}{Summary of methods and results \cite{Sathe_2015_a}}\\
-			\taskevent{2018}{Oct.}{Workshop 10}{Turbulence intensity measurements with lidars – applications to loads verification and site suitability}{Identified barriers and solutions to the widespread application of lidar for these applications}\\
-			\otherevent{2019}{June}{DNV-GL announce wind lidar turbulence Joint Industry Project (JIP)~\extlink{https://www.dnvgl.com/news/dnv-gl-launches-new-joint-industry-project-to-cut-wind-energy-costs-through-lidar-measurements-154393}}\\
-			\otherevent{2019}{}{CFARS starts to explore the use of turbulence intensity data from lidar~\extlink{http://www.cfars.org/}}\\
-		\end{RMold}
-		\tcblower
-		\begin{RMnew}
-			\taskevent{2020}{Q1}{Working group on lidar Ti}{Working group with Task 32, CFARS, and DNV-GL JIP to coordinate activities, share results, and ensure stakeholder buy-in}{}\\
-		\end{RMnew}
-        \RMdeliverables{2020 Q1: Joint roadmap with Task 32, CFARS and DNV-GL JIP}
-		\RMoutcome{Clearer understanding of methods to measure wind turbulence, how they relate to existing metrics, and how they relate to wind turbine applications}
-	\end{roadmap}
+	\RPdetails{8b}{Device fine leveling} may be mitigated by the lidar's own ability to compensate for small tilt or roll.
 	
-	% -----------------------------------
-	% Turbine and Plant Controls
-	% -----------------------------------
-	\newpage
-	\section*{How can we use lidar to better operate wind turbines and plants?}
-	Wind lidar can measure the winds in and around operating wind turbines and wind plants with unprecedented detail. Several reports have identified this as a key enabling technology for reducing the cost of wind energy in future \cite{Veers_2019_a}, and it forms a core part of Task 32's work.
-    
-	% -----------------------------------
-	% Turbine Certification
-	% -----------------------------------
-	\subsection*{How do we certify and optimize turbines that use lidar-assisted controls?}
-    Wind Lidar can provide information about incoming winds that can be used to make wind turbine control decisions. Implementing lidar-assisted control systems brings new challenges related to optimising the wind lidar that are used for this application, and to optimising the turbine controller and structure for the new opportunities presented by the turbine. 
-    
-    Task 32 seeks to enable communication and collaboration between wind turbine OEMs, lidar vendors, certification agencies, and the research community to address these challenges (Roadmap \ref{rm:LAC}).
-    
-	\begin{roadmap}[label=rm:LAC]{Lidar-assisted controls}
-	    \RMgoal{To use wind lidar as an additional wind turbine/ wind plant sensor to improve wind turbine and wind plant control}
-	    \RMactivities
-		\begin{RMold}
-		    \taskevent{2016}{Jul.}{Workshop 2}{Optimizing lidars for wind turbine control applications \cite{Simley2018_RS}}{}\\
-			\taskevent{2018}{Jan.}{Workshop 8}{Certification of lidar-assisted controls applications \cite{Schlipf2018a}}{}\\
-			\taskevent{2019}{Oct.}{Workshop 15}{Optimizing wind turbines using LAC using Systems Engineering methods}{Joint workshop with Task 37}\\
-		\end{RMold}
-		\tcblower
-		\begin{RMnew}
-			 \taskevent{2020}{}{Workshop}{Lidars for wind farm control applications}{}\\
-		\end{RMnew}
-		\RMdeliverables{2020 Q4: Research Plan on how to evaluate the benefit of lidar-assisted controls together with IEA Wind Task 37}
-	\end{roadmap}
+	\RPdetails{9}{Tilt sensors on the RSD} Still relevant, but small settling angles may be mitigated by \RP{8b}.
+	
+	\subsubsection*{\S 3.7 Time snychronization}
+	The 2013 Recommended Practice document suggested the use of an accurate external time reference. This is still important when using data from the lidar.
+	
+	\RPdetails{10}{Time sychronization} Still relevant.
+	
+	\subsubsection*{\S 3.8 Power supply}
+	As in 2013, remote wind lidar often still require stand-alone power systems, and care should be taken in sourcing and fuelling these power systems. However, compared to 2013, there are now many more experienced service providers who are able to support remote wind lidar deployments.
+	
+	\RPdetails{11}{Design of remote power systems} Still relevant.
 
-	% -----------------------------------
-	% Forecasting
-	% -----------------------------------
-	\newpage
-	\subsection*{Forecasting}
-    Because of their ability to look upwind, wind lidar can be used to forecast the winds arriving at wind plants or wind turbines 10 minutes or more in advance. This can be used to forecast energy output or make wind turbine- and wind farm- level control decisions. 
-    
-    Task 32 and Task 36 (Forecasting) worked together to establish the opportunities and needs for such minute-scale forecasts.
+	\RPdetails{12}{Fueled remote power systems} Still relevant.
 
-    \begin{roadmap}[label=offshore]{Forecasting}
-        \RMgoal{Identify the opportunities and needs for lidar-supported wind and power forecasting}
-        \RMactivities
-		\begin{RMold}
-			\taskevent{2018}{Jun.}{Workshop 9}{Experience in very short-term forecasting}{Joint workshop with Task 36~\extlink{https://community.ieawind.org/task32/events/event-information/workshop-9}}\\
-		\end{RMold}
-		\RMoutcome{2019: Summary of the different approaches to minute-scale forecasting and possible near-future developments published in \emph{Energies} \cite{Wuerth2019_Energies}}
-		\tcblower
-		No further activities are planned in this area.
-	\end{roadmap}
-	
-    % -----------------------------------
-	% # Performance verification
-	% -----------------------------------
-	\newpage
-	\section*{How can we use lidar for performance verification?}
-	Wind lidars can be deployed on the ground or on nacelles for temporary power performance testing, or integrated into the turbine for continuous monitoring. They can characterise the wind shear and veer across the rotor disk, and thus are very useful for detailed performance studies.
-	
-	Task 32 supported validation of the uncertainty guidance in Edition 2 of the IEC 61400-121 Standard (2017) \cite{IEC_standard_61400-12-1_2017}. Since then the Task has looked at the use of nacelle-mounted lidar in complex terrain (Roadmap \ref{rm:NacelleMountedComplexTerrain}) and at using measurements in the wind turbine induction zone as input to a performance verification (Roadmap \ref{rm:InductionZone}).
-	
-    % -----------------------------------
-	% ## Nacelle-mounted lidar in complex terrain
-	% -----------------------------------
-	\subsection*{Nacelle-mounted lidar in complex terrain}
-	
-	It can be challenging to relate wind conditions at a turbine's location to a reference wind measurement, especially in complex (inhomogenous) wind conditions associated with complex terrain. Instead, it may be possible to use nacelle-mounted lidar to measure upwind of the turbine and use that data for power performance verification.
-	
-    %\todo[inline]{@Rozenn - do you think this is OK? it's based on the material we wrote for the Task 32 website}
+	\subsubsection*{\S 3.9 Protection from interference}
+	Like any unattended equipment, care should be taken to protect a ground-based lidar from interference.
 
-    \begin{roadmap}[label=rm:NacelleMountedComplexTerrain]{Nacelle-mounted lidar in complex terrain}
-	\RMgoal{Enable the use of nacelle-mounted lidar for power performance verification}
-	\RMactivities
-    \begin{RMold}
-    	\otherevent{2017}{}{Start of development of IEC 61400-50-3 for nacelle-mounted lidar for wind measurements}\\
-	\end{RMold}
-	\tcblower
-	\begin{RMnew}
-        \taskevent{2020}{Jan.}{Round Robin}{Comparison of nacelle-mounted lidar methods for power performance testing in complex terrain}{Application of several methods and comparison of experience~\extlink{https://community.ieawind.org/task32/events/event-information/comparative-exercise-power-curve-verification}}\\
-        \taskevent{2020}{Q4}{Workshop}{Comparison of nacelle-mounted lidar methods for power performance testing}{Presentation and discussion of results from the round robin exercise}
-	\end{RMnew}
-	\RMdeliverables{2021: Proposal to IEC 61400-50-3 for nacelle-mounted lidar for wind measurements}
-	\RMoutcome{}
-	\end{roadmap}
+	\RPdetails{13}{Protection from interference} Still relevant.
+	
+	\subsubsection*{\S 3.10 Safety signs and interlocks}
+	Properly operated and maintained remote sensing devices should pose no hazard to the public, outside of the enclosure.
 
-    % -----------------------------------
-	% ## Measurements in the induction zone
-	% -----------------------------------
-	\newpage
-	\subsection*{Measurements in the induction zone of wind turbines}
-	
-	Current power performance standards require wind speed measurements for power performance verification to be taken at more than 2 diameters upwind. This is challenging with larger wind turbines.
-	
-	Task 32's experience suggests that it may be feasible to use measurements closer to the rotor to estimate free-stream wind conditions as part of power performance verification (Roadmap \ref{rm:InductionZone}).
+	\RPdetails{14}{safety signs, interlocks and operation} Still relevant.
 
-    \begin{roadmap}[label=rm:InductionZone]{Power performance verification using measurements in the induction zone}
-	\RMgoal{Use of wind lidar to measure in the induction zone of a wind turbine and relate these to wind turbine power output}
-	\RMactivities
-    \begin{RMold}
-        \taskevent{2018}{}{Round Robin}{Windfield reconstruction in the induction zone}{Estimate of free-stream wind speed from a common data set}\\
-    	\taskevent{2019}{Jan}{Workshop 11}{Windfield reconstruction in the induction zone}{Joint workshop with the Power Curve Working Group to present the results of the round robin}\\
-	\end{RMold}
-	\tcblower
-	\begin{RMnew}
-		\taskevent{2020}{}{Round Robin}{Windfield reconstruction in the induction zone with wind plant blockage}{Extends the previous round-robin to consider the effects of flow blockage associated with other turbines in an offshore array}\\
-        \taskevent{2021}{}{Workshop}{Windfield reconstruction in the induction zone with wind plant blockage}{Presenting the results of the round robin.}
-	\end{RMnew}
-	\RMdeliverables{Report on windfield reconstruction in the induction zone, summarizing results from the Round Robins and workshop }
-	\RMoutcome{More accurate power performance testing of wind turbines in operational wind plants}
-	\end{roadmap}
+	\subsubsection*{\S 3.11 Function check}
+	An extensive set of functional tests were suggested for the RSD to show that the RSD was properly working before being left unattended. These are still important, but might be implemented as part of automated tests at power-up by the RSD.
+		
+	\RPdetails{15}{Function checklist} Still relevant.
+	
+	\subsubsection*{\S 3.12 Installation report}
+	The 2013 document proposed an extensive installation report. This was intended to be the basis for third-party reporting.
+	
+	\RPdetails{16}{Installation report} Still relevant, but possibly superseded by installer's report formats.
+	
+	%% -----------------------------------
+	%% Operating RSD (RP17-24)
+	%% ----------------------------------- 
 
-	% -----------------------------------
-	% Hardware and Software Collaboration
-	% -----------------------------------
-	\newpage
-	\section*{How can we collaborate on hardware and software?}
-	
-	Wind lidar are traditionally expensive devices that have been heavily optimized for specific applications. This also applies to software, which have been designed for certain workflows. This makes it challenging to test new ideas for wind lidar - as a new device is needed - or to share results between groups. 
-	
-	Task 32's members have been developing the frameworks and tools needed to collaborate on device hardware and software, and the software used to analyse results (Roadmap \ref{rm:Collaboration}). 
+	\subsection*{\S 4 Operating remote sensing devices}
 
-	\begin{roadmap}[label=rm:Collaboration]{Collaboration on wind lidar hardware and software}
-	\RMgoal{Reduce the time and effort needed to design and test innovations in wind lidar device hardware and software}
-	\RMactivities
-    \begin{RMold}
-    	\taskevent{2017}{Nov.}{General Meeting}{OpenLidar concept presented \cite{clifton_2019_3414197}}{}\\
-    	\otherevent{2018}{}{The e-windLidar tools repository on Github provides a central point to exchange and collaborate on tools~\extlink{https://github.com/e-WindLidar}}\\
-		\taskevent{2018}{Oct.}{Workshop 12}{e-WindLidar}{Identifies opportunities and challenges for collaboration on wind lidar device software and data processing software} \\
-	\end{RMold}
-	\tcblower
-	\begin{RMnew}
-		\otherevent{2020}{Q1}{Early-stage researchers start in EU-funded ITN LIKE training network~\extlink{www.msca-like.eu}}\\
-	\end{RMnew}
-	\RMdeliverables{Reference lidar designs and campaign uncertainty estimates using the OpenLidar concept}
-	\RMoutcome{Frameworks, tools, and examples for collaboration on wind lidar hardware and software}
-	\end{roadmap}
+	\subsubsection*{\S 4.1 Communications}
+	The 2013 Recommended Practices proposed how remote access to the RSD could be provided and what might be done. These capabilities are still required today.
 	
-	These activities will allow us to develop new wind lidar devices and trial new applications, and estimate the measurement performance of wind measurements in advance. Software tools will also capture and share some of the community's knowledge, reducing our reliance on today's experts.
+	\RPdetails{17}{Remote access to the RSD} Still relevant.
+	
+	\subsubsection*{Sensitivity to ambient conditions}
+	In 2013, wind lidar were still relatively new devices and there was a lack of consensus about their behaviour in different weather conditions. \RP{18} and \RP{19} recommended that measures should be taken to document and if possible, mitigate the effects of ambient conditions on the RSD.
+	
+	These recommendations have since been superseded by the development of ambient condition sensitivity tests for RSDs as part of the 2017 revision of the IEC 61400-12-12 standards for power performance verification of wind turbines.
+	
+	\RPdetails{18}{Lidar fog and cloud detection} Deprecated. Superseded by IEC 61400-12-1 (2017) \cite{IEC_61400_12_1_2017}.
+	
+	\RPdetails{19}{Mitigation of precipitation effects on measurements} Deprecated. Superseded by IEC 61400-12-1 (2017) \cite{IEC_61400_12_1_2017}.
+	
+	\RP{20} and \RP{21} are not relevant to wind lidar.
+	
+	\subsubsection*{\S 4.3 Local weather conditions}
+	\RP{22} recommended the installation of weather sensing data to understand the RSD performance and assist in predicting AEP. This information is still useful, but can be linked to the results of a sensitivity assessment according to IEC 61400-12-1 (2017) \cite{IEC_61400_12_1_2017}.
+	
+	\RPdetails{22}{Monitoring weather conditions} Still relevant. Should include any sensitivity effects identified according to IEC 61400-12-1 (2017) \cite{IEC_61400_12_1_2017}.
+	
+	\subsubsection*{\S 4.4 Servicing and maintenance}
+	RSD may require maintenance from time to time, and this may result in some impact on the RSD measurements. \RP{23} recommended that the user and RSD supplier to work together to ensure reliability and repeatability, and is still applicable to wind lidar.
+	
+	\RPdetails{23}{Recommended service intervals} Still relevant.
+	
+	\subsubsection*{\S 4.5 Operation and maintenance log}
+	\RP{24} recommended the user keep a log of all use and maintenance of the RSD. Experience has shown that a log can be very valuable.
 
-    % -----------------------------------
-	% Open Questions
-	% -----------------------------------
-    \newpage
-	\section*{Other Activities}
-	Task 32 offers its members a range of ways to exchange information and experience and disseminate their results to others.
-	\subsection*{Commitment to Open Science}
-    Task 32 leverages public money from many countries. We therefore aim to make our results freely accessible. To support this goal, we regularly update the  \href{https://community.ieawind.org/tasks/task32}{Task 32 website} with news and results from the Task's activities. In 2019 we started \href{https://community.ieawind.org/task32/ourlibrary/glossary/wgalphabeticaltab}{a glossary} on the website to capture some of the Task's knowledge and share it with others. We have also launched a Task 32 \href{https://zenodo.org/communities/ieawindtask32/}{document repository} where we collect material from our events and publish white papers.
+	\RPdetails{24}{Operation and maintenance log} Still relevant.
+	
+	%% -----------------------------------
+	%% Remote sensing data analysis (RP 25-29)
+	%% ----------------------------------- 
 
-    \subsection*{Events}
-    We hold around three workshops every year. These are focussed on one specific application and are intended to make progress on a clear question. Many examples of these workshops can be found in the roadmaps.
-    
-    We also hold an annual General Meeting. The meeting is a mixture of presentations, discussion, and workshop sessions, and is attended by around 50 Task members from academia, industry, and government. The meeting includes results from the prior year's workshops and often triggers new activities. We will hold Task 32 General Meetings in Vienna in 2020 and Stuttgart in 2021.
-    
-    \subsection*{Advisory Board Meetings}
-    Task 32 is facilitated by Operating Agents who are in turn supported by a 12-person Advisory Board drawn from the Task. The advisory board provides a way for the participants, Operating Agents, and other Tasks to quickly respond to changing situations and keep the Tasks activities relevant.
-    
+	\subsection*{\S 5 Remote sensing data analysis}
+
+	\subsubsection*{\S 5.1 Wind speed and vector}
+	\RP{25}, 26 and 27 recommended storing data at several points during RSD data processing. These steps are still required for wind lidar.
 	
-	% -----------------------------------
-	% Get involved
-	% -----------------------------------
-	\section*{Providing input to future versions}
-	The Task 32 roadmap has been developed by the Task 32 Operating Agent and Advisory Board based on input from the Task's stakeholders. The easiest way to help set the Task's future direction is therefore to get involved with the Task. We welcome participants at our events from any of Task 32's member countries, and encourage observers from the rest of the IEA wind member countries. We'd love to hear your opinions about what we should be doing, or ideas for solutions that benefit the whole community. Please see the \href{https://community.ieawind.org/task32/events/upcomingevents}{Task 32 website} for information about our events.
+	\RPdetails{25}{Line-of-sight wind velocity} Still relevant.
 	
+	\RPdetails{26 a, b}{Instantaneous wind vector} Still relevant.
+	
+	\RPdetails{26 a, c}{Instantaneous wind vector} Deprecated. This can be derived from the data stored under \RP{26 a} and \RP{26 b}.
+	
+	\RPdetails{27}{Time-averaged wind vector} Still relevant.
+	
+	\subsubsection*{\S 5.2 Turbulence intensity}
+	In 2013, \RP{28} noted that `the ability to generate or report an estimate of the turbulence intensity is not required but may be advantageous for some applications'. 
+	
+	Since then, there has been much research into the ability of wind lidar to measure wind turbulence \citep[see e.g.,][]{clifton_2018_a}. The consensus in the wind lidar community is that the wind turbulence derived by a wind lidar is not the same as measured by a cup anemometer, but there may be ways to adjust the two values so that they agree.
+	
+	The effectiveness of several tools to adjust wind lidar turbulence data will be investigated by the Consortium for the Advancement of Remote Sensing (CFARS, \href{http:\\www.cfars.org}{www.cfars.org)} in 2020.
+	
+	For those reasons, \RP{28} should be considered deprecated, pending an update from CFARS.
+	
+	\RPdetails{28}{Derivation of turbulence intensity} Deprecated.
+	
+	\subsection*{\S 5.3 Extreme gusts}
+	\RP{29} suggested that extreme gust information derived from RSD data could be used if required, and that verification data would also be required.
+	
+	\todo[inline]{not sure what the case is here in 2020}
+	
+	\subsection*{\S 5.4 Correcting for errors due to flow inhomogeneity}
+	Section 5.4 and \note{17} noted that flow inhomogeneity may introduce differences between RSD and cup anemometers. As was noted in the discussion of \RP{3}, this is the subject of ongoing community research and results are expected in 2021.
+
+	%% -----------------------------------
+	%% Verification of remote sensing devices (RP 30 - 41)
+	%% ----------------------------------- 
+	
+	\subsection*{\S6 Verification of remote sensing devices}
+	Section 6 of the 2013 Recommended Practices document includes recommendations about how to test the performance of a remote sensing device, quantify it, estimate uncertainty, and how to document it. These RPs (RP 30 - 40, inclusive) have all been superseded by the publication of the IEC 61400-12-1 (2017) standard \cite{IEC_61400_12_1_2017}.
+	
+	\RPdetails{30}{Verification of wind speed and direction} Deprecated. Superseded by IEC 61400-12-1 (2017) \cite{IEC_61400_12_1_2017}.
+
+	\RPdetails{31}{Verification of turbulence intensity} Deprecated. Superseded by IEC 61400-12-1 (2017) \cite{IEC_61400_12_1_2017}.
+
+	\RPdetails{32}{Comparisons at multiple heights with respect to the proposed turbine} Deprecated. Superseded by IEC 61400-12-1 (2017) \cite{IEC_61400_12_1_2017}.
+
+	\RPdetails{33}{Verification dataset} Deprecated. Superseded by IEC 61400-12-1 (2017) \cite{IEC_61400_12_1_2017}.
+
+	\RPdetails{34}{Preparation of verification dataset} Deprecated. Superseded by IEC 61400-12-1 (2017) \cite{IEC_61400_12_1_2017}.
+
+	\RPdetails{35}{Document the reference dataset} Deprecated. Superseded by IEC 61400-12-1 (2017) \cite{IEC_61400_12_1_2017}.
+
+	\RPdetails{36}{Demonstrating clock synchronization with reference devices} Deprecated. Superseded by IEC 61400-12-1 (2017) \cite{IEC_61400_12_1_2017}.
+
+	\RPdetails{37}{Reporting of verification results} Deprecated. Superseded by IEC 61400-12-1 (2017) \cite{IEC_61400_12_1_2017}.
+
+	\RPdetails{38}{Reporting of RSD verification relationship to flow conditions} Deprecated. Superseded by IEC 61400-12-1 (2017) \cite{IEC_61400_12_1_2017}.
+
+	\RPdetails{39}{Uncertainty estimate} Deprecated. Superseded by IEC 61400-12-1 (2017) \cite{IEC_61400_12_1_2017}.
+
+	\RPdetails{40}{Verification report} Deprecated. Superseded by IEC 61400-12-1 (2017) \cite{IEC_61400_12_1_2017}.
+
+	\RPdetails{41}{Periodic device verification} Deprecated. Superseded by IEC 61400-12-1 (2017) \cite{IEC_61400_12_1_2017}.
+	
+	
+	\section*{Summary}
+	Many of the 2013 IEA Wind Recommended Practice 15 on Ground-Based Vertically-Profiling Remote Sensing For Wind Resource Assessment are still relevant in 2020, particularly in relation to general good practice when deploying, operating, and maintaining wind lidar.
+	
+	However, almost all verification activities have been superseded by the publication in 2017 of the IEC 61400-12-1 Standard for power performance measurements \cite{IEC_61400_12_1_2017}. It is our expectation that the development of a new family of IEC standards for instrumentation and measurements in the 2020's may in turn deprecate the IEC 61400-12-1 standard.	
+		
 	%% -----------------------------------
     %% References
     %% -----------------------------------
-    %\section*{References}
+    %\subsection*{References}
     % bibliography
     \label{sec:References}
     \addcontentsline{toc}{section}{References}
@@ -385,7 +341,8 @@
 			%% -----------------------------------
 			\textbf{Author team:} %
 			Andrew Clifton (Task 32 Operating Agent, University of Stuttgart, Germany), %
-			David Schlipf (Task 32 operating Agent, Flensburg University of Applied Sciences, Germany).
+			xxx (org x), 
+			yyy (org y).
 			%% -----------------------------------
 			%% Reviewers
 			%% -----------------------------------
