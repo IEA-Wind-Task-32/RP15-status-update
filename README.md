@@ -1,5 +1,7 @@
 ![CI](https://github.com/IEA-Wind-Task-32/RP15-status-update/workflows/CI/badge.svg)
 
+![Releases](https://img.shields.io/github/v/release/iea-wind-task-32/RP15-status-update.svg)
+
 **<large>DRAFT</large>**
 
 # Update to IEA Wind Recommended Practice 15
