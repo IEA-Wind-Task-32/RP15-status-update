@@ -39,60 +39,61 @@
 	}
 	\vskip 6pt
 	
-	In this status update we provide our perspective on which standards, guidelines and recommended practices should be considered when deploying vertically-profiling wind lidar for wind resource assessments in 2020. 
+	In this status update we provide our perspective on which standards, guidelines and recommended practices should be considered when deploying vertically-profiling wind lidar for wind resource assessments in 2020.
 	
 	%% -----------------------------------
 	%% Why
-	%% ----------------------------------- 
+	%% -----------------------------------
 	\section*{Why an update?}
-	in 2013 IEA Wind Task 32 and Task 11 published "Recommended Practices ground-based remote sensing for wind resource assessment" \cite{RP15_2013}. This was published in response to a need from the wind energy community for a document that would establish repeatable good practice in measurements with active remote sensing devices (RSDs). Since then, several other related documents -- including internatioanl and national standards, guidelines, and more -- have been published, and it is no longer clear what the user should turn to.
+	in 2013 IEA Wind Task 32 and Task 11 published "Recommended Practices ground-based remote sensing for wind resource assessment" \cite{RP15_2013}. This was published in response to a need from the wind energy community for a document that would establish repeatable good practice in measurements with active remote sensing devices (RSDs), specifically wind lidar and sodar.
 	
-	\section*{Our goal}
+	Since 2013, IEA Wind Task 32 and others have developed and codified new understanding of how best to use wind lidar. As a result, it is no longer clear what the user should turn to.
+	
+	\subsection*{Our goal}
 	The goal of this update is the same as was stated in the preface of RP15:
 	
-	\begin{shadequote}[r]{RP15 (2013)}	
-... to document the steps required to collect high-quality, well-documented remote sensing data for use in wind resource assessments on land. 
+	\begin{shadequote}[r]{RP15 (2013)}
+... to document the steps required to collect high-quality, well-documented remote sensing data for use in wind resource assessments on land.
 	\end{shadequote}
 	
-	\section*{Our use case}
-	The use case considered here is the same as was stated in the preface of RP15:
+	\subsection*{Our use case}
+	The use case considered here is the same as was stated in the preface of RP15, but limited to wind lidar:
 
 	\begin{shadequote}[r]{RP15 (2013)}
-	... ground-based, fixed scan geometry, vertically-profiling wind remote sensing using lidar and sodar for the resource assessment phase of an on-shore wind farm development. Lidar and sodar that use these methods are referred to generically in the document as remote sensing devices, or RSD.''
+	... ground-based, fixed scan geometry, vertically-profiling wind remote sensing using lidar ... for the resource assessment phase of an on-shore wind farm development. Lidar ... that use these methods are referred to generically in the document as remote sensing devices, or RSD.''
 	\end{shadequote}
-
-	We limit our update solely to wind lidar.
-		
 	
-	\section*{Relevant documents}
+	\subsection*{Relevant documents}
 	
-	The \href{https://github.com/IEA-Wind-Task-32/RP15-Ground-Based-Remote-Sensing-for-Wind-Resource-Assessment/releases/tag/1.0}{2013 IEA Wind Recommended Practices document} provides specific guidance as ``Recommended Practices'' (e.g., RP1) and informative notes (e.g. Note 1) about how to use remote sensing. There were 41 RPs and 22 notes in total, covering many different aspects of the remote sensing lifecycle. These RPs represented the community's perceptions of how to do things, and were not always based on evidence, and so were called ``recommended practices'', not a standard. 
-
+	The \href{https://github.com/IEA-Wind-Task-32/RP15-Ground-Based-Remote-Sensing-for-Wind-Resource-Assessment/releases/tag/1.0}{2013 IEA Wind Recommended Practices document} (Fig \ref{fig:RP15_2013}) provided specific guidance as ``Recommended Practices'' (e.g., \RP{1}) and informative notes (e.g. Note 1) about how to use remote sensing. These covered many different aspects of the remote sensing lifecycle. These RPs were not always based on evidence, and so were called ``recommended practices'', not a standard.
 	
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.9\linewidth, frame]{graphics/RP2013.png} 
+		\includegraphics[width=0.9\linewidth, frame]{graphics/RP2013.png}
 		\caption{The 2013 Recommended Practices}
-		\label{fig:RP2013}
-	\end{figure}	
+		\label{fig:RP15_2013}
+	\end{figure}
+				
+	\section*{What to do in 2020}
+	The following section discusses the current documents that are applicable to the lifecycle of a wind lidar deployment. They use the order established in the 2013 IEA Wind Recommended Practices:
+	
+	\begin{\begin{itemize}
+		\item Characterising remote sensing devices ()
+	\end{itemize}}
 	
 	
-		
-	\section*{Relevance of the 2013 Recommended Practices in 2020} 
-	
-	Following is a review of the 2013 Recommended Practices referencing the section numbers (e.g., \S 2.3) and individual recommended practices (e.g. \RP{1}) in that document.
 	%% -----------------------------------
-	%% Characterizing RSD (RP1)
-	%% ----------------------------------- 
+	%% Characterising RSD (RP1)
+	%% -----------------------------------
 
-	\subsection*{\S 2 Characterizing remote sensing devices}
-	A remote sensing device should be appropriately characterized. The important characteristics of a wind lidar are the same in 2020 as in 2013.
+	\subsection*{Characterising remote sensing devices}
+	A remote sensing device should be appropriately characterized. The important characteristics of a wind lidar are described in RP15.
 
-	\RPdetails{1}{Documentation of RSD characteristics} Still relevant.
+	$\rightarrow$ RP15 \RPdetails{1}{Documentation of RSD characteristics}
 	 
 	%% -----------------------------------
 	%% Installing RSD (RP2-16)
-	%% ----------------------------------- 
+	%% -----------------------------------
 
 	 \subsection*{\S 3 Installing remote sensing devices}
 	 \subsubsection*{\S 3.1 Training}
@@ -173,7 +174,7 @@
 	
 	%% -----------------------------------
 	%% Operating RSD (RP17-24)
-	%% ----------------------------------- 
+	%% -----------------------------------
 
 	\subsection*{\S 4 Operating remote sensing devices}
 
@@ -210,7 +211,7 @@
 	
 	%% -----------------------------------
 	%% Remote sensing data analysis (RP 25-29)
-	%% ----------------------------------- 
+	%% -----------------------------------
 
 	\subsection*{\S 5 Remote sensing data analysis}
 
@@ -226,7 +227,7 @@
 	\RPdetails{27}{Time-averaged wind vector} Still relevant.
 	
 	\subsubsection*{\S 5.2 Turbulence intensity}
-	In 2013, \RP{28} noted that `the ability to generate or report an estimate of the turbulence intensity is not required but may be advantageous for some applications'. 
+	In 2013, \RP{28} noted that `the ability to generate or report an estimate of the turbulence intensity is not required but may be advantageous for some applications'.
 	
 	Since then, there has been much research into the ability of wind lidar to measure wind turbulence \citep[see e.g.,][]{clifton_2018_a}. The consensus in the wind lidar community is that the wind turbulence derived by a wind lidar is not the same as measured by a cup anemometer, but there may be ways to adjust the two values so that they agree.
 	
@@ -246,7 +247,7 @@
 
 	%% -----------------------------------
 	%% Verification of remote sensing devices (RP 30 - 41)
-	%% ----------------------------------- 
+	%% -----------------------------------
 	
 	\subsection*{\S6 Verification of remote sensing devices}
 	Section 6 of the 2013 Recommended Practices document includes recommendations about how to test the performance of a remote sensing device, quantify it, estimate uncertainty, and how to document it. These RPs (RP 30 - 40, inclusive) have all been superseded by the publication of the IEC 61400-12-1 (2017) standard \cite{IEC_61400_12_1_2017}.
@@ -279,7 +280,7 @@
 	\section*{Summary}
 	Many of the 2013 IEA Wind Recommended Practice 15 on Ground-Based Vertically-Profiling Remote Sensing For Wind Resource Assessment are still relevant in 2020, particularly in relation to general good practice when deploying, operating, and maintaining wind lidar.
 	
-	However, almost all verification activities have been superseded by the publication in 2017 of the IEC 61400-12-1 Standard for power performance measurements \cite{IEC_61400_12_1_2017}. It is our expectation that the development of a new family of IEC standards for instrumentation and measurements in the 2020's may in turn deprecate the IEC 61400-12-1 standard.	
+	However, almost all verification activities have been superseded by the publication in 2017 of the IEC 61400-12-1 Standard for power performance measurements \cite{IEC_61400_12_1_2017}. It is our expectation that the development of a new family of IEC standards for instrumentation and measurements in the 2020's may in turn deprecate the IEC 61400-12-1 standard.
 		
 	%% -----------------------------------
     %% References
@@ -333,7 +334,7 @@
 			%% -----------------------------------
 			\textbf{Author team:} %
 			Andrew Clifton (Task 32 Operating Agent, University of Stuttgart, Germany), %
-			xxx (org x), 
+			xxx (org x),
 			yyy (org y).
 			%% -----------------------------------
 			%% Reviewers
@@ -356,7 +357,7 @@
 
 %% -----------------------------------
 	%% Feedback
-	%% ----------------------------------- 	
+	%% -----------------------------------
 	
 	\section*{Feedback}
 	Feedback about the 2013 Recommended Practices document should be made via the \href{https://github.com/IEA-Wind-Task-32/RP15-Ground-Based-Remote-Sensing-for-Wind-Resource-Assessment/issues}{GitHub repository}.
