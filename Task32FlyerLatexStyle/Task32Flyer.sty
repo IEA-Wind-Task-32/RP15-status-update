@@ -32,7 +32,7 @@
 \RequirePackage[british]{babel}
 
 % -------------------------------------------------------------
-% Set paper layout (geometry) 
+% Set paper layout (geometry)
 % -------------------------------------------------------------
 \RequirePackage[a4paper,
     left=1.5cm,
@@ -247,6 +247,11 @@
     {3pt}
     {1pt}
     {\color{Task32Blue}\fosfamily\normalsize\sbseries\selectfont}}
+\renewcommand{\subsubsection}{%
+        \@startsection{subsection}{2}{\z@}
+        {3pt}
+        {1pt}
+        {\fosfamily\normalsize\sbseries\selectfont}}
 
 % Format Captions
 % see e.g. http://www.peteryu.ca/tutorials/publishing/latex_captions for details of how to adjust
@@ -356,7 +361,7 @@
         interior style={top color=LHScolor,bottom color=LHScolor!60!black},
         segmentation style={top color=ABlue,bottom color=ABlue!60!black},
 ]{%
-\droptextshadow{LHScolor}{DOI}% <-- Drop shadow + text for DOI 
+\droptextshadow{LHScolor}{DOI}% <-- Drop shadow + text for DOI
 }{%
 \droptextshadow{ABlue}{\hypersetup{hidelinks=true}\href{http://dx.doi.org/#1}{\fontfamily{phv}\selectfont #1}}% <-- Drop shadow + text for reference number + hyperref
 }%
@@ -430,7 +435,7 @@
         \begin{tikzpicture}[remember picture,overlay]
         \draw  let \p1=($(current page.north)-(current page header area.south)$),
             \n1={veclen(\x1,\y1)} in
-            node [inner sep=0,outer sep=0,below right] 
+            node [inner sep=0,outer sep=0,below right]
             at (current page.north west){\includegraphics[width=\paperwidth, height=5cm]{graphics/banner.png}};
         \end{tikzpicture}%
         }
