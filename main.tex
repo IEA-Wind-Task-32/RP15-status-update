@@ -7,7 +7,7 @@
 %% Document information
 %% -----------------------------------
 \def\pubdate{DRAFT 22 April 2020}
-\title{Using Ground-Based Vertically-Profiling Wind Lidar For Wind Resource Assessment in 2020}
+\title{A Review of Guidance for Using Ground-Based Vertically-Profiling Wind Lidar For Wind Resource Assessment}
 \shorttitle{Vertically-Profiling Wind Lidar For Wind Resource Assessment in 2020}
 \DOI{10.5281/zenodo.xxxxxx}
 \addbibresource{bibliography.bib}
@@ -39,34 +39,29 @@
 %% Introductory text
 %% -----------------------------------
 {\Large\noindent%
-IEA Wind published recommended practices on ground-based remote sensing for wind resource assessment in 2013. But what are the relevant standards for wind lidar for this use case in 2020?
+What are the relevant standards for using wind lidar for wind resource assessments in 2020?
 }
 \vskip 6pt
 	
-In this status update we give our perspective on best practices when deploying vertically-profiling wind lidar for wind resource assessments in 2020.
+Wind lidar are often used to supply the wind data needed for wind resource assessments. In this review we give our perspective on best practices when deploying vertically-profiling wind lidar for wind resource assessments in 2020.
 	
 %% -----------------------------------
 %% Why
 %% -----------------------------------
-\section*{Why an update?}
+\section*{Why a review?}
 In 2013 IEA Wind Task 32 and Task 11 published "Recommended Practices ground-based remote sensing for wind resource assessment" \cite{RP15_2013}, or \IEARP. It was published in response to a need from the wind energy community for a document that described repeatable good practice in measurements with active remote sensing devices (RSDs), including lidar and sodar.
 	
 Since 2013, IEA Wind Task 32 and others have developed and codified new understanding of how best to use wind lidar. As a result, it is no longer clear what documents a user should turn to for guidance.
+
+This document therefore provides wind lidar users with a review of the applicable standards, best practices and other documents that are relevant to the use of vertically-profiling wind lidar for wind resource assessment in 2020.
 	
 \subsection*{Our goal}
-The goal of this update is the same as \IEARP, but is focused specifically on wind lidar:
-	
-\begin{shadequote}[r]{RP-15 (2013)}
-... to document the steps required to collect high-quality, well-documented [wind lidar] data for use in wind resource assessments on land.
-	\end{shadequote}
+Our goal is to document the steps required to collect high-quality, well-documented wind lidar data for use in wind resource assessments on land. This is the same as the 2013 \IEARP, but limited to lidar.
 	
 \subsection*{Our use case}
-The use case considered here is the same as \IEARP, but limited to wind lidar:
+We focus on ground-based, fixed scan geometry, vertically-profiling wind remote sensing using lidar for the resource assessment phase of a wind farm development on land. This is the same as the 2013 \IEARP, but limited to lidar.
 
-\begin{shadequote}[r]{RP-15 (2013)}
-... ground-based, fixed scan geometry, vertically-profiling wind remote sensing using [lidar] ... for the resource assessment phase of an on-shore wind farm development.''
-\end{shadequote}
-	
+This use case may include multi-year deployments at a fixed location, or shorter periods at multiple locations.
 	
 %% -----------------------------------
 %% Relevant documents
@@ -87,176 +82,194 @@ In 2017 the International Electrotechnical Committee published a new edition of 
 
 \todo[inline]{Are there other documents we should consider / mention, e.g. TR6?}
 
-	%% -----------------------------------
-	%% What to do in 2020
-	%% -----------------------------------
-	\section*{What to do in 2020}
-	The following sections identify the documents that are applicable to the lifecycle of a wind lidar deployment:
+%% -----------------------------------
+%% What to do in 2020
+%% -----------------------------------
+\section*{What to do in 2020}
+The following sections identify the documents that are applicable at different steps in the lifecycle of a wind lidar deployment:
 	
-	\begin{itemize}
-		\item \S 1 Characterising wind lidar
-		\item Installing wind lidar
-		\item Operating wind lidar
-		\item Lidar data analysis
-		\item Verification of wind lidar.
-	\end{itemize}
+\begin{itemize}
+	\item \S \ref{sec:characterizing} Characterising wind lidar
+	\item \S \ref{sec:installing} Installing wind lidar
+	\item \S \ref{sec:operating} Operating wind lidar
+	\item \S \ref{sec:analysis} Lidar data analysis
+	\item \S \ref{sec:verification} Verification of wind lidar.
+\end{itemize}
 	
 	%% -----------------------------------
 	%% Characterising RSD (RP1)
 	%% -----------------------------------
 
-	\section{Characterising remote sensing devices}
-	It is important that the technology used in the lidar is well characterized for future reference. This is covered in \IEARPndetails{1}{Documentation of RSD characteristics}.
-	 
-	%% -----------------------------------
-	%% Installing RSD (RP2-16)
-	%% -----------------------------------
+\section{Characterising wind lidar}
+\label{sec:characterizing}
+It is important that the technology used in the lidar is well characterized for future reference. This is covered in \IEARPndetails{1}{Documentation of RSD characteristics}.
 
-	\subsection{Installing wind lidar}
-	\subsubsection{Training}
-	Users are encouraged to take specialist training on the wind lidar before deploying the device. This is covered in \IEARPndetails{2}{Training of workers}.
+%% -----------------------------------
+%% Installing RSD (RP2-16)
+%% -----------------------------------
 
-	\subsubsection{Site selection}
-	Current generations of wind lidar and their data processing tools are usually able to deal with obstructions or small-scale inhomogeneity (i.e. smaller than the scanning volume of the lidar). Therefore it is not necessary to completely avoid tower or structure wakes or deployments where part of the lidar scan pattern is obstructed. Instead, measurements that might include tower or structure wakes, or where the measurement beam is partly obstructed, should be carried out according to the manufacturer's recommendations. (This replaces \IEARPn{6 c and d} from 2013.)
-		
-	In \IEARP\ it was recommended to deploy lidar in an area where terrain-induced flow inhomogeneity in the measurement volume is minimal (\IEARPndetails{3}{Deployment in complex flow environments}). This was to minimize the potential differences between a wind lidar measurement (which are volumetric), and data from a cup anemometer, wind vane, or other point measurements.
-	
-	There are now many commercially-available tools and services that make it possible to use data from wind lidars deployed in more inhomogeneous flows (often called `complex flows') than was considered appropriate in 2013. Therefore, the siting constraint created by \IEARPndetails{3}{Deployment in complex flow environments} no longer applies.
-	
-	Instead, we recommend that the data from a lidar operating in complex flow conditions should be treated with the complex flow in mind. This may include different ways of processing the lidar line-of-sight data, statistical models, flow models, or other approaches. We further recommend following the recommendations of the lidar vendor or experienced consulting engineers about the use of wind lidars in complex terrain.
-	
-	Note: The challenge for the wind energy industry in 2020 is to identify the flow conditions where such tools may be required, and the potential benefit from using them. This is an active research topic.
+\section{Installing wind lidar}
+\label{sec:installing}
+\subsection{Training}
+Users are encouraged to take specialist training on the wind lidar before deploying the device. This is covered in \IEARPndetails{2}{Training of workers}.
 
-	\todo[inline]{Not sure about the above section. Also feel like we could use this as a chance to raise this as an important research problem.}
-	
-	\subsubsection{Transport}
-	Any piece of wind measurement equipment should be handled with care during transport. This is covered in \IEARPndetails{4}{Reusable protective packaging for RSD transport} and \IEARPndetails{5}{Installation of shock detectors on the RSD}.
-	
-	\subsubsection{Site preparation}
-	Recommendations for site preparation to help ensure a successful deployment are given in \IEARPn{6 a and b}.
-		
-	\subsubsection{Lidar orientation}
-	It is important to document the lidar's compass orientation. Appropriate recommended practices are described in \IEARPndetails{7}{Device alignment}.
-	
-	\subsubsection{Tilt and roll}
-	It is important to monitor the lidar's tilt and roll with respect to  vertical. This may be required for data analysis or to monitor the lidar's stability. Appropriate recommended practices are given in \IEARPndetails{8}{Device leveling} and \IEARPndetails{9}{Tilt sensors on the RSD}.
-	
-	\subsubsection{Time synchronization}
-	Comparing data from multiple sources (for example, a wind lidar and a traditional tower) requires that the different data be sychronized. Appropriate recommended practices are given in \IEARPndetails{10}{Time sychronization}.
-	
-	\subsubsection{Power supply}
-	It is recommended to carefully choose a mature and proven power supply option for any site without grid-supplied electricity. Appropriate recommended practices are given in \IEARPndetails{11}{Design of remote power systems}.
-	
-	Remote power systems that have any kind of on-site fuel require special care and preparation. Appropriate recommended practices are given in \IEARPndetails{12}{Fuelled remote power systems}.
-	
-	\todo[inline]{Do we want numbered headings for easy reference?}
-	
-	\subsubsection*{Protection from interference}
-	Like any unattended equipment, care should be taken to protect a ground-based lidar from interference. This is covered in \IEARPndetails{13}{Protection from interference}.
-	
-	\subsubsection*{Safety signs and interlocks}
-	The need for safe operation and signage is covered in \IEARPndetails{14}{safety signs, interlocks and operation}.
-	
-	\subsubsection*{Function check}
-	It is important to check that the lidar is working properly before being left unattended. A checklist was suggested in \IEARPndetails{15}{Function checklist}. These checks are still useful, but now might be implemented as part of automated tests by the lidar.
+\subsection{Selecting lidar deployment sites}
+Careful site selection is important to get high-quality data. There are two important considerations in choosing where the lidar will be placed:
 
-	\subsubsection*{Installation report}
-	An installation report can add value to the final data set that is used in the wind resource assessment by reducing uncertainty. This is described in \IEARPndetails{16}{Installation report}.
-	
-	The content of the installation report should be checked with other data users.
-	
-	\subsection*{Operating wind lidar}
-	\subsubsection*{Communications}
-	\IEARP gives recommendations for how to provide remote access to a wind lidar (\IEARPndetails{17}{Remote access to the RSD}).
-	
-	\subsubsection*{Sensitivity to ambient conditions}
-	In 2013, wind lidar were still relatively new devices and there was a lack of consensus about their behaviour in different weather conditions. \IEARPn{18 and 19} recommended that measures should be taken to document and if possible, mitigate the effects of ambient conditions on the RSD. Since then, tests for the sensitivity of lidar and other remote sensing devices have been introduced as part of IEC 61400-12-1 (2017). These form part of the lidar uncertainty classification. Therefore, \IEARPn{18 and 19} are no longer valid.
-	
-	If they need such information, lidar users can request an uncertainty classification document that meets the needs of IEC 61400-12-1 (2017) from the lidar vendor or through a third party.
-	
-	\subsubsection*{Local weather conditions}
-	It is important to collect weather data at or near the lidar. These should measure any parameters that have been found to be important using the  sensitivity assessment approach given in IEC 61400-12-1 (2017).
-		
-	\subsubsection*{Servicing and maintenance}
-	Like all wind measurement devices, wind lidar may require maintenance from time to time.
-	
-	Appropriate recommendations about how wind lidar users and suppliers should work together to ensure reliability and repeatability are provided in \IEARPndetails{23}{Recommended service intervals}.
-	
-	\subsubsection*{Operation and maintenance log}
-	Users should keep a log of all use and maintenance of the wind lidar. This is described in \IEARPndetails{24}{Operation and maintenance log}.
-	%
-	%% -----------------------------------
-	%% Remote sensing data analysis (RP 25-29)
-	%% -----------------------------------
-	\subsection*{Remote sensing data analysis}
-	
-	\subsubsection*{Wind speed and vector}
-	The wind lidar should save data at different steps in the internal data processing. This may include the following:
-	
-	\begin{enumerate}
-		\item Line-of-sight data, as described in \IEARPndetails{25}{Line-of-sight wind velocity}.
-		\item Reconstructed wind data, as described in \IEARPndetails{26}{Instantaneous wind vector}. \IEARPn{26 c} is no longer required as the information needed by a user can be derived from the data.
-		\item Tim-averaged wind vector, as described in \IEARPndetails{27}{Time-averaged wind vector}.
-\end{enumerate}
+\begin{itemize}
+\item \textbf{Avoiding small-scale wind disturbances.} These are phenomena that occur within the wind lidar scanning volume and are not representative of the wind resources at a site. \IEARPn{6 c} recommends avoiding such features.
+\item \textbf{Avoiding obstructions.} Wind lidar should have a clear sky view. This is described in \IEARPn{6 d}.
+\end{itemize}
+  
+Some wind lidar devices may be able to ignore small-scale wind disturbances, or still deliver accurate data when the beams are partially obstructed. Therefore users should always follow the manufacturer's guidance on how to site their device.
 
-\subsubsection*{Turbulence intensity}
-In 2013 when the IEA RP-15 was published it was not clear if wind turbulence values derived from wind lidar data could be directly compared to turbulence data from cup anemometers.
-	%
-Since then, there has been much research into the ability of wind lidar to measure wind turbulence \citep[see e.g.,][]{sathe_2016_a, clifton_2018_a}. The current consensus in the wind lidar community is that the wind turbulence derived by a wind lidar is not the same as measured by a cup anemometer, but there may be ways to adjust the two values so that they agree.
-	%
-For those reasons, \IEARPndetails{28}{Derivation of turbulence intensity} is no longer applicable.
+\todo[inline]{now separating small-scale disturbances from complex terrain}
 
-We suggest that turbulence data derived from wind lidar may be used if there is an appropriate validation of the methods against a reference device. The validation should be carried out in comparable terrain and comparable atmospheric conditions.
+\subsection{Deploying wind lidar in complex terrain}
+\label{sec:complex}
+Terrain can influence the winds above it. This may lead to changes in flow within the lidar's measurement volume. This in turn has the effect that the data from a wind lidar may differ from that obtained by a cup anemometer, which is a point measurement and the accepted reference for wind speed measurements. This terrain-induced, measurement-scale flow inhomogeneity is often referred to generally as `complex flow' that occurs in `complex terrain'. It is important to note that the difference between lidar and cup anemometers in complex terrain is influenced by many other factors besides the terrain form. These may include land cover, measurement height, the lidar's own measurement strategy, and weather \cite[amongst others; see e.g.,][]{Clifton_2015_a}.
 
-Because this turbulence data could be derived by many different methods (e.g., by the lidar as part of the measurements, by the lidar's post-processing software, by third-party software, or other methods), thought should be given to developing an auditable data processing chain.
 
-\subsubsection*{Extreme gusts}
-Gust data from wind lidar can be used if they have been validated against measurements from a cup anemometer. This should follow the same validation processes as used for wind speed and wind turbulence data.
+As noted above, there is no universal, terrain-related boundary between `simple' conditions (where the methods are not beneficial) and `complex' condition. Instead there is a device-specific \textbf{spectrum of complexity} that extends along many axes; terrain form is only one of the axes. At one end of the axes, measurements from a wind lidar are identical to cup anemometers. At the other end, there are observable differences between lidar and point measurements.
+
+\todo[inline]{Not sure about this. Opens the door to too much doubt about lidar performance compared to cups, in general}
+
+Many methods exist that offer to create a transfer function between lidar data and cup anemometer data; we refer to them generically as `transfer methods'. The applicability or suitability of these methods is out of scope for this document.
+
+The fact that each type of device responds differently to winds in complex terrain means that it is not possible to set a guideline for all wind lidar about when to use such methods. Instead, guidelines are needed for each individual type of device.
+
+The major challenge for the user is understanding when to use such transfer methods. Currently the accepted practice is to use a transfer method if advised to do so by the vendor or other experts. However, users may wonder, ``when is it advisable to seek the guidance of an expert?''. In the absence of a directly applicable wind measurement or wind resource assessment standard, we suggest that if conditions are complex according to IEC 61400-12-1 (2017) that it may be appropriate to work with experts to assess the need for such a transfer method. Also, the decision to use such transfer methods -- and the steps required to verify them -- may be driven by the purpose for which the data is being used. Lidar users should always work with their stakeholders to understand their requirements.
+
+An IEA Wind Task 32 working group on the use of wind lidar in complex terrain is carrying out a group study on several different transfer methods. Results are expected in 2021 and the experience gained by this group may lead to the publication of guidelines for this use case.
+
+\todo[inline]{Think this is a bit better than previous version?}
+	
+\subsection{Transport}
+Suggestions for how to prepare and transport lidar are given in \IEARPndetails{4}{Reusable protective packaging for RSD transport} and \IEARPndetails{5}{Installation of shock detectors on the RSD}.
+	
+\subsection{Site preparation}
+Recommendations for site preparation to help ensure a successful deployment are given in \IEARPn{6 a and b}.
+	
+\subsection{Lidar orientation}
+It is important to document the lidar's compass orientation. Recommended practices are given in \IEARPndetails{7}{Device alignment}.
+	
+\subsection{Tilt and roll}
+It is important to monitor the lidar's tilt and roll with respect to  vertical. This may be required for data analysis or to monitor the lidar's stability. Recommended practices are given in \IEARPndetails{8}{Device leveling} and \IEARPndetails{9}{Tilt sensors on the RSD}.
+	
+\subsection{Time synchronization}
+Comparing data from multiple sources (for example, a wind lidar and a traditional tower) requires that the different data be sychronized. Appropriate recommended practices are given in \IEARPndetails{10}{Time sychronization}.
+	
+\subsection{Power supply}
+Many wind lidar devices will be deployed `off the grid'. Recommendations on how to choose a power supply option for such situations are given in \IEARPndetails{11}{Design of remote power systems}. Remote power systems that have any kind of on-site fuel require special care and preparation. Recommended practices are given in \IEARPndetails{12}{Fuelled remote power systems}.
+	
+\subsection{Protection from interference}
+Like any unattended equipment, care should be taken to protect a ground-based lidar from interference. This is covered in \IEARPndetails{13}{Protection from interference}.
+	
+\subsection{Safety signs and interlocks}
+The need for safe operation and signage is covered in \IEARPndetails{14}{safety signs, interlocks and operation}.
+	
+\subsection{Function check}
+It is important to check that the lidar is working properly before being left unattended. A checklist was suggested in \IEARPndetails{15}{Function checklist}. These checks are still useful, but now might be implemented as part of automated tests by the lidar.
+
+\subsection{Stakeholder-driven documentation}
+An installation report can add value to the final data set that is used in the wind resource assessment by reducing uncertainty.
+
+The project manager should check that the information in the installation report satisfies all stakeholders and considers future needs. \IEARPndetails{16}{Installation report} describes a possible installation report. Some data users may require additional information about the lidar installation.
+
+\todo[inline]{Changed this title from `installation report' to recognize that some users are quite sophisticated in the information they gather, and some stakeholders need more than that which was listed in \IEARP.}
+
+%% -----------------------------------
+%% Operating wind lidar
+%% -----------------------------------
+
+\section{Operating wind lidar}
+\label{sec:operating}
+\subsection{Communications}
+\IEARP\ gives recommendations for how to provide remote access to a wind lidar (\IEARPndetails{17}{Remote access to the RSD}).
+	
+%\subsection{Quantifying sensitivity to ambient conditions}
+
+
+%If they need such information for their specific use case, lidar users can request a sensitivity analysis that documents the performance of the lidar according to IEC 61400-12-1 (2017) Annex L from the lidar vendor or through a third party. Users should then collect relevant weather data at the deployment site.
+
+\subsection{Deployments in cold climates}
+Wind lidar can be deployed in cold climates. In icing conditions they may be easier to keep in operation than wind measurement towers, or could be used together to increase data availability. Like any equipment deployed in cold climates, wind lidar need a reliable power supply, as described in  \IEARPndetails{11}{Design of remote power systems}.
+
+There is an ongoing IEA Wind Task 32 and Task 19 joint effort to share and document experience in using wind lidar in cold climates. Results are expected in 2021 and may lead to the publication of guidelines for this use case.
+
+\todo[inline]{this subsection on cold climates is new}
+	
+\subsection{Servicing and maintenance}
+Like all wind measurement devices, wind lidar may require maintenance from time to time. Recommendations about how wind lidar users and suppliers can work together to ensure reliability and repeatability are provided in \IEARPndetails{23}{Recommended service intervals}.
+
+\subsection{Operation and maintenance log}
+Users should keep a log of all use and maintenance of the wind lidar. This is described in \IEARPndetails{24}{Operation and maintenance log}.
+
+%% -----------------------------------
+%% Remote sensing data analysis (RP 25-29)
+%% -----------------------------------
+\section{Remote sensing data analysis}
+\label{sec:analysis}
+
+\subsection{Wind speed and vector}
+It can be helpful to save data wind lidar data at different steps in the internal data processing. Recommendations for what data to store are given in \IEARPndetails{25}{Line-of-sight wind velocity}, \IEARPndetails{26}{Instantaneous wind vector}, and \IEARPndetails{27}{Time-averaged wind vector}.
+
+\subsection{Turbulence intensity}
+Turbulence intensity data are not always required from wind lidar data during wind resource measurements, as these are often obtained from models or other sources.
+
+Because the wind lidar measures wind in a volume, there may be differences between the turbulence intensity measured by a wind lidar compared to a cup anemometer \citep[see e.g.,][]{clifton_2018_a}. As with complex flows (\S \ref{sec:complex}), deriving turbulence intensity from wind lidar is therefore a device-specific challenge.
+
+There have been efforts to create transfer functions for turbulence intensity, but their applicability and suitability is out of the scope of this document. Lidar users may therefore wish to engage with vendors or consultants for guidance.
+
+There are ongoing industry initiatives to explore the use of turbulence data from wind lidar:
+\begin{itemize}
+  \item The Consortium for the Advancement for Remote Sensing (CFARS, \href{http://www.cfars.org}{www.cfars.org}) is testing several methods of processing wind lidar data to estimate turbulence intensity. Results are expected in mid 2020.
+  \item DNV-GL have initiated a joint industry project (JIP; see \href{https://www.dnvgl.com/news/dnv-gl-launches-new-joint-industry-project-to-cut-wind-energy-costs-through-lidar-measurements-154393}{www.dnvgl.com}) to support acceptance and adoption of wind lidar for wind turbulence measurements. Initiated in 2019, the JIP is expected to generate results in 2020 and beyond.
+\end{itemize}
+
+\todo[inline]{can we say anything about the validation of such methods? Is it clear (or not) if IEC 61400-12-1 (2017) applies here?}
+
+\subsection{Extreme gusts}
+As with turbulence intensity data, extreme gusts measured by wind lidar can also differ from cup anemometers. These differences are also device-specific and as a result, users should engage with vendors and consultants.
+
+\todo[inline]{Feel like we're missing other things in this section, e.g. quality metrics}
 
 %% -----------------------------------
 %% Verification of remote sensing devices (RP 30 - 41)
 %% -----------------------------------
 	%
-\subsection*{Verification of remote sensing devices}
-\todo[inline]{Verification or validation? Let's align with IEC?}
-\IEARP\ included recommendations about how to test the performance of a remote sensing device, quantify it, estimate uncertainty, and how to document it. These RPs (\IEARPn{30 -- 40}) may still be helpful for users who are interested in carrying out performance checks on their own wind lidar. However, the methods described in \IEARP\ do not provide the information necessary for a wind resource assessment.
+\section{Verification of remote sensing devices}
+\label{sec:verification}
+\todo[inline]{Verification or validation? Shouldn't it be validation?  Let's align with IEC..}
 
-We recommend that a wind lidar being used as part of the financing package for a wind energy facility undergo an uncertainty classification according to the IEC 61400-12-1 (2017) standard \cite{IEC_61400_12_1_2017}.
-		
-\section*{Future developments}
-The state of the art in wind lidar measurements will continue to develop, and there will be new standards published. We are aware of the following activities that may be relevant:
-	
-	\begin{itemize}
-		\item An IEA Wind Task 32 working group on the use of wind lidar in complex terrain is carrying out a group study on several different tools to support the use of wind lidar in complex terrain. Results are expected in 2021 and may lead to the publication of guidelines for that use case.
-		
-		\item The effectiveness of several tools to adjust wind lidar turbulence data will be investigated by the Consortium for the Advancement of Remote Sensing (CFARS, \href{http:\\www.cfars.org}{www.cfars.org)} in 2020.
-		
-		\item The IEC is also in the process of updating the body of standards relating to wind energy (the IEC 61400 series). During 2020-2022 new standards are expected on ...
+All validation activities should be driven by the use case. This was discussed in \IEARP\ Section 1.7 ``A note on `bankability'''.
 
-		\todo[inline]{50-3 etc.}
-				
-		\item ...
-		
-	\end{itemize}
+Users who are interested in exploring the performance of a lidar device could use the approaches set out in \IEARPn{30 -- 40}. However, the methods described in \IEARP\ do not provide the uncertainty information necessary for a wind resource assessment in 2020.
+
+Currently, a wind lidar being used as part of the financing package for a wind energy facility usually undergoes an uncertainty classification according to the IEC 61400-12-1 (2017) standard \cite{IEC_61400_12_1_2017}.
+
+It is expected that the IEC will publish a new wind measurement standard (IEC 61400-50-3) in 2020 or 2021.
+
+\todo[inline]{Trying to say that there are different ways to do a validation test, depending on user needs.}
+
+\section*{Summary}
+Many of the 2013 IEA Wind Recommended Practice 15 on Ground-Based Vertically-Profiling Remote Sensing For Wind Resource Assessment are still relevant in 2020, particularly in relation to general good practice when deploying, operating, and maintaining wind lidar.
 	
-	As a result of these developments, we anticipate revising this document again during the period 2021-2023 to reflect new developments. Readers are encouraged to check \href{\conceptDOI}{\conceptDOI} for revisions.
-	
-	\section*{Summary}
-	Many of the 2013 IEA Wind Recommended Practice 15 on Ground-Based Vertically-Profiling Remote Sensing For Wind Resource Assessment are still relevant in 2020, particularly in relation to general good practice when deploying, operating, and maintaining wind lidar.
-	
-	Since 2013 the wind energy community has gathered a huge amount of experience in using wind lidar data. Therefore in 2020 we recommend that turbulence and gust data derived from wind lidar measurements can be used, if verification studies can be provided. 
-	
-	Almost all of the verification approaches suggested in the 2013 \IEARP\ have been superseded by the publication in 2017 of the IEC 61400-12-1 Standard for power performance measurements \cite{IEC_61400_12_1_2017}. It is our expectation that the development of a new family of IEC standards for instrumentation and measurements in the 2020's may in turn deprecate the 2017 edition of the IEC 61400-12-1 standard.
-	
+Since 2013 the wind energy community has gathered a huge amount of experience in using wind lidar data. Some of this experience has been captured in the IEC 61400-12-1 Standard for power performance measurements \cite{IEC_61400_12_1_2017}. Upcoming new IEC standards for resource assessment, instrumentation and measurements -- to be published in the 2020's -- may in turn deprecate the 2017 edition of the IEC 61400-12-1 standard for the use case covered in this review.
+
+We anticipate revising this document again during the period 2021-2023 to reflect new developments. Readers are encouraged to check \href{\conceptDOI}{\conceptDOI} for revisions.
+
 %% -----------------------------------
 %% Feedback
 %% -----------------------------------
-	
+
 \section*{Your feedback and comments}
-Feedback about the 2013 Recommended Practices document should be made via \href{https://github.com/IEA-Wind-Task-32/RP15-Ground-Based-Remote-Sensing-for-Wind-Resource-Assessment/issues}{our GitHub repository}.
+We welcome constructive feedback about this review and other IEA Wind Task 32 activities:
 
-Feedback about this status update should be directed to the \href{https://github.com/IEA-Wind-Task-32/RP15-Ground-Based-Remote-Sensing-for-Wind-Resource-Assessment}{Task 32 Operating agents}.
-
+\begin{itemize}
+  \item Feedback \textbf{about the 2013 Recommended Practices} document should be made via \href{https://github.com/IEA-Wind-Task-32/RP15-Ground-Based-Remote-Sensing-for-Wind-Resource-Assessment/issues}{our GitHub repository}.
+  \item Feedback \textbf{about this review} should be directed to \href{https://github.com/IEA-Wind-Task-32/RP15-status-update}{the review's GitHub repository} or to the \href{mailto:ieawind.task32@ifb.uni-stuttgart.de}{Task 32 Operating agents}.
+\end{itemize}
 	
     %% -----------------------------------
     %% References
@@ -314,8 +327,9 @@ The International Energy Agency is an autonomous organisation which works to ens
 %% -----------------------------------
 \textbf{Author team:} %
 Andrew Clifton (Task 32 Operating Agent, University of Stuttgart, Germany), %
-xxx (org x), %
-yyy (org y).
+Alexander Stoekl (Energiewerkstatt), %
+Nicolas Jolin (Nergica),
+Paul Mazoyer (Vaisala)
 %% -----------------------------------
 %% Reviewers
 %% -----------------------------------
