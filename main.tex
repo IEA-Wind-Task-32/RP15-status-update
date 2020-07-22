@@ -43,45 +43,30 @@
 What is the best practice for using wind lidar for wind resource assessments in 2020?}
 \vskip 6pt
 	
-Wind lidar are often used to supply the wind data needed for wind resource assessments. In this review we give our perspective on best practices when deploying vertically-profiling wind lidar for wind resource assessments in 2020.
+Wind lidar are often used to supply the wind data needed for wind resource assessments. In this review we give our perspective on best practices when deploying vertically-profiling wind lidar for wind resource assessments in 2020. This document is particularly aimed at new wind lidar users.
 	
 %% -----------------------------------
 %% Why
 %% -----------------------------------
-\section*{Why a review?}
-In 2013 IEA Wind Task 32 and Task 11 published their recommended practices for ground-based remote sensing for wind resource assessment \cite{RP15_2013}, known as \IEARP. It was published to satisfy a need from the wind energy community for documented good practice in measurements with active remote sensing devices (RSDs), including lidar and sodar.
-	
-Since 2013, IEA Wind Task 32 and others have developed and codified new understanding of how best to use wind lidar. As a result, it is not always clear what documents a user should check for guidance.
-
-This document provides users with an overview of documents relevant to the use of vertically-profiling wind lidar for wind resource assessment in 2020.
-	
 \subsection*{Our goal}
-Our goal is to document the steps required to collect high-quality, well-documented wind lidar data for use in wind resource assessments on land. This is the same as the 2013 \IEARP, but limited to lidar.
+Our goal is to document the steps required to collect high-quality, well-documented wind lidar data for use in wind resource assessments on land.
 	
 \subsection*{Our use case}
-We focus on ground-based lidar that use a fixed scan geometry to deliver data that are to be used in the resource assessment phase of a wind farm development on land. These data typically consist of vertically-resolved profiles of wind speed and direction. This is the same as \IEARP, limited to lidar.
-	
-%% -----------------------------------
-%% Relevant documents
-%% -----------------------------------
+We focus on ground-based lidar that use a fixed scan geometry to deliver data that are to be used in the resource assessment phase of a wind farm development on land. These data typically consist of vertically-resolved profiles of wind speed and direction.
 
-\newpage
-\section*{What documents are relevant?}
-	
-The \href{https://github.com/IEA-Wind-Task-32/RP15-Ground-Based-Remote-Sensing-for-Wind-Resource-Assessment/releases/tag/1.0}{2013 IEA Wind Recommended Practices document} provided specific guidance as ``Recommended Practices'' (e.g., \IEARPn{1}) and informative notes (e.g. \IEARPnote{1}) about how to use remote sensing. These covered many different aspects of the remote sensing lifecycle. The document was based on experience and collected the remote sensing community's understanding in 2013. Therefore it was not a standard, but a ``recommended practices'' document.
-	
-% \begin{figure}[h]
-	% 	\centering
-	% 	\includegraphics[width=0.9\linewidth, frame]{graphics/RP2013.png}
-	% 	\caption{The 2013 Recommended Practices}
-	% 	\label{fig:RP15_2013}
-	% \end{figure}
+\subsection*{A short history of guidance documents}
+In 2013 IEA Wind Task 32 and Task 11 published their recommended practices for ground-based remote sensing for wind resource assessment \cite{RP15_2013}, known as \IEARP. It was published to satisfy a need from the wind energy community for documented good practice in measurements with active remote sensing devices (RSDs), including lidar and sodar. \href{https://github.com/IEA-Wind-Task-32/RP15-Ground-Based-Remote-Sensing-for-Wind-Resource-Assessment/releases/tag/1.0}{It is still available online}.
+
+\IEARP provided specific guidance as ``Recommended Practices'' (e.g., \IEARPn{1}) and informative notes (e.g. \IEARPnote{1}) about how to use remote sensing. These covered many different aspects of the remote sensing lifecycle. The document was based on experience and collected the remote sensing community's understanding in 2013. Therefore it was not a standard, but a ``recommended practices'' document.
 
 In 2016, the Measuring Network of Wind Energy Institutes - MEASNET - published Version 2.0 of a \emph{``Procedure for the evaluation of site-specific wind conditions''} \citep{Measnet_SiteAssessment_2016}. This procedure provides generic guidance to measuring wind characteristics, and a normative annex on wind measurement using remote sensing devices. It also includes guidance on how to set up measurement campaigns depending on the data required. It is available from \href{http://www.measnet.com/wp-content/uploads/2016/05/Measnet_SiteAssessment_V2.0.pdf}{www.measnet.com}.
   % 6140-12-7
 
 In 2017 the International Electrotechnical Committee published a new edition of the IEC 61400-12-1 `Standard for power performance testing of wind turbines' \citep[IEC 61400-12-1 (2017), ][]{IEC_61400_12_1_2017}. The IEC 61400-12-1 standard has traditionally been used as a \emph{de facto} standard for the measurements required for a wind resource assessment. It includes Annex L on the use of remote sensing for wind measurements. As a result, some groups also consider this standard to be applicable to the use case we consider here. The IEC 61400-12-1 (2017) standard can be \href{https://webstore.iec.ch/publication/66163}{purchased from the IEC}.
 
+\section*{Motivation for this review}
+
+So, which of these documents are still applicable? This document provides a short update of what we consider to be `best practice` in 2020. It is particularly aimed at new wind lidar users.
 
 %% -----------------------------------
 %% What to do in 2020
@@ -118,6 +103,7 @@ Users are encouraged to take specialist training on the wind lidar before deploy
 Careful site selection is important to get high-quality data. The user should:
 
 \begin{itemize}
+\item \textbf{Choose a representative location} that takes into account how the lidar data will be used. This should be done in collaboration with stakeholders. Possible approaches are discussed in the MEASNET document \citep{Measnet_SiteAssessment_2016}.
 \item \textbf{Avoid obstructions.} Wind lidar should have a clear sky view. This is described in \IEARPn{6 d}. Some lidar devices can deliver accurate data when the beams are partially obstructed.
 \item \textbf{Avoid small-scale wind disturbances} such as mast or tower wakes or other phenomena that might pass through the measurement volume, but are not related to the wind resource that a wind turbine would experience. \IEARPn{6 c} recommends avoiding such features. Some wind lidar devices include ignore data processing that can filter out the effects of such small-scale wind disturbances.
 \end{itemize}
@@ -233,10 +219,12 @@ Wind lidar and cup anemometers use different measurement principles and so extre
 Verification is the act of quantifying the performance of a device against a reference. Like cup anemometers and other measurement devices used in the development of wind energy facilities, the verification of a wind lidar should be driven by the user's requirements. This was discussed in \IEARP\ \emph{Section 1.7 ``A note on `bankability'''}. Verification can therefore take many forms:
 
 \begin{itemize}
-  \item Most lidars are checked by the manufacturer before delivery to customers. This can take the form of a short measurement campaign where the lidar measures winds near a reference anemometer mounted on a tall tower. A comparison of the results shows if the device is performing as expected. This comparison could be carried out according to the IEC 61400-12-1 (2017) standard \cite{IEC_61400_12_1_2017}. Alternatively, the lidar can be placed next to another lidar that is regularly compared to a cup anemometer on a mast. These pre-delivery tests are the same concepts as those offered for cup anemometers. Users may therefore find pre-delivery testing of lidar is  sufficient for their needs.
+  \item Most lidars are checked by the manufacturer before delivery to customers. This can take the form of a short measurement campaign where the lidar measures winds near a reference anemometer mounted on a tall tower. A comparison of the results shows if the device is performing as expected. This comparison could be carried out according to the IEC 61400-12-1 (2017) standard \cite{IEC_61400_12_1_2017}. Alternatively, the lidar can be placed next to another lidar that is regularly compared to a cup anemometer on a mast. These pre-delivery tests are the same concepts as those offered for cup anemometers.
   \item Users who want to explore the performance of a lidar device could use the approaches set out in \IEARPn{30 -- 40}. However, \IEARP\ is unlikely to provide the information needed for an investment decision.
   \item Users who require more detailed information about the device uncertainty -- for example as part of the financing package for a wind energy facility -- might require an uncertainty certification according to the IEC 61400-12-1 (2017) standard \cite{IEC_61400_12_1_2017}.
 \end{itemize}
+
+These methods may give slightly different uncertainty estimates and the results may be treated differently by different stakeholders. Users should therefore work closely with stakeholders to ensure that they choose a verification approach that gives them an appropriate uncertainty budget.
 
 Verification guidelines for remote sensing devices are being reviewed by the IEC as part a new wind measurement standard (IEC 61400-50-2). This standard is expected in 2020 or 2021.
 
