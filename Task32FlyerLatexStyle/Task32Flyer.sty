@@ -110,6 +110,9 @@
 \definecolor{TextGrey}{HTML}{32323C}
 \color{TextGrey}
 
+% define a light grey
+\definecolor{TextLightGrey}{HTML}{84848a}
+
 \normalfont\normalsize
 
 \newcommand{\headlinecolor}{\normalcolor}
@@ -222,17 +225,22 @@
 % -------------------------------------------
 % Title / Title Page
 % -------------------------------------------
+
+\newcommand\@doctype{}
+\newcommand\doctype[1]{\renewcommand\@doctype{#1}}
+
+
 \let\Date\@date
 \let\Title\@title
 
 \def\@maketitle{%
 	% add back the space we just borrowed with the header
 	\vskip 4cm
-    % generate the title
-    %\textbf{An IEA Wind Task 32 White Paper}\par
-  {\huge\noindent\fosfamily\color{Task32Blue}\@title \par}%
-    \vskip 12pt%
-  } 
+    % title
+    \textbf{\@doctype}\par
+    {\huge\noindent\fosfamily\color{Task32Blue}\@title \par}
+    \vskip 12pt
+    }% end of maketitle
 
 % -------------------------------------------
 % Chapter and section markings
